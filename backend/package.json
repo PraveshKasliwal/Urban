@@ -28,7 +28,6 @@
     "multer-s3": "^3.0.1",
     "nodemon": "^3.1.11",
     "razorpay": "^2.9.6",
-    "replicate": "^1.4.0",
-    "uuid": "^13.0.0"
+    "replicate": "^1.4.0"
   }
 }
