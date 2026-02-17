@@ -1,0 +1,70 @@
+.filter-panel {
+    max-width: 20%;
+    background-color: #f6f5f4;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Section titles */
+.filter-title {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.filter-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.filter-label {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #211e1c;
+    font-weight: 600;
+}
+
+/* Price value */
+.price-value {
+    font-weight: 500;
+}
+
+.color-container{
+    flex-wrap: wrap;
+}
+
+.color-dot {
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* On hover */
+.color-dot:hover {
+    transform: scale(1.1);
+}
+
+/* When selected */
+.color-dot.active {
+    box-shadow: 0 0 0 1px white, 0 0 0 4px #c36522;
+}
+
+/* Apply button */
+.apply-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    color: black;
+    border: 1px solid #e5e0dc;
+    text-transform: uppercase;
+}
+
+.apply-btn:hover {
+    background-color: #c36522;
+}

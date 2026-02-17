@@ -1,0 +1,264 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.login-wrapper {
+  width: 100%;
+  max-height: 100vh;
+}
+
+.login-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f6f5f0;
+}
+
+.login-form-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+
+.login-form {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 450px;
+  width: 100%;
+  padding: 40px;
+}
+
+.login-image {
+  width: 50%;
+  height: 100%;
+}
+
+.login-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+
+.form-header h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  font-family: "Inter", sans-serif;
+}
+
+/* INPUT */
+.login-input-wrapper {
+  background: transparent !important;
+}
+
+.login-input {
+  padding: 10px 10px 10px 0;
+  font-size: 14px;
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 1px solid #4f604e !important;
+  border-radius: 0;
+}
+
+.login-inner-input{
+  padding: 0 !important;
+}
+
+/* BUTTONS */
+.login-btn-primary {
+  background-color: #4f604e !important;
+}
+
+.login-btn-google {
+  background-color: transparent !important;
+  border: 1px solid #4f604e !important;
+}
+
+.login-btn-label {
+  color: white;
+  font-weight: 300;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.login-btn-google .login-btn-label {
+  color: black;
+}
+
+/* GOOGLE ICON */
+.login-btn-google img {
+  height: 16px;
+  width: 18px;
+}
+
+/* OPTIONS */
+.options {
+  margin-top: 10px;
+}
+
+/* FORM TEXT */
+.login-form a {
+  color: #4f604e;
+}
+
+.textColor {
+  color: #4f604e;
+}
+
+/* =======================
+   SIGN UP INPUTS
+======================= */
+
+.signup-input {
+  background: transparent !important;
+  padding: 10px 5px;
+  font-size: 14px;
+  border: 2px solid #b3b2aa !important;
+}
+
+/* =======================
+   SIGN UP BUTTON
+======================= */
+
+.signup-btn-primary {
+  background-color: #4f604e !important;
+}
+
+.signup-btn-label {
+  color: white;
+  font-weight: 300;
+  font-size: 15px;
+}
+
+.error-message{
+  color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .form-header p {
+  color: #555;
+  font-size: 14px;
+} */
+
+/* .form-header a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+} */
+
+/* .form-group {
+  margin-top: 25px;
+} */
+
+/* .form-group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 8px;
+  font-weight: 500;
+} */
+
+/* .input-wrapper input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 5px;
+  font-size: 14px;
+  outline: none;
+} */
+
+/* .input-wrapper input:focus {
+  border-color: #2563eb;
+} */
+
+/* Options */
+/* .options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+} */
+
+/* .remember {
+  font-size: 14px;
+} */
+
+/* .forgot {
+  font-size: 14px;
+  color: #2563eb;
+  text-decoration: none;
+} */
+
+/* Buttons */
+/* .btn-primary {
+  width: 100%;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px;
+  margin-top: 30px;
+  font-size: 15px;
+  border-radius: 6px;
+  cursor: pointer;
+} */
+
+/* .btn-primary:hover {
+  background-color: #1e40af;
+} */
+
+/* .divider {
+  display: flex;
+  align-items: center;
+  margin: 25px 0;
+} */
+
+/* .divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #ccc;
+} */
+
+/* .divider span {
+  padding: 0 10px;
+  font-size: 14px;
+} */
+
+/* .btn-google {
+  width: 100%;
+  border: 1px solid #ccc;
+  background: white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  border-radius: 6px;
+} */
+
+/* .btn-google img {
+  width: 20px;
+} */
+
+/* @media (max-width: 768px) {
+  .login-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .login-image {
+    order: -1;
+    height: 300px;
+  }
+} */

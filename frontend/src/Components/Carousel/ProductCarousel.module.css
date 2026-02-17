@@ -1,0 +1,10 @@
+.control {
+  &[data-inactive] {
+    opacity: 0;
+    cursor: default;
+  }
+  &[data-inactive]:hover {
+    opacity: 0;
+    cursor: default;
+  }
+}
