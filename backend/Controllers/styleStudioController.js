@@ -1,4 +1,3 @@
-import { GoogleGenAI } from "@google/genai";
 import { getEmbedding } from "../utils/embedding.js";
 import Product from "../Models/product.js";
 
