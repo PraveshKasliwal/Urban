@@ -36,7 +36,7 @@ app.use((err, req, res, next) => {
   res.status(500).json({ message: err.message || "Server error" });
 });
 
-mongoose.connect(process.env.MONGODB_URI)
+mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     console.log("Connected to DB");
     app.listen(process.env.PORT);
