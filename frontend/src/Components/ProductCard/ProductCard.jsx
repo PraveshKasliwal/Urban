@@ -14,7 +14,7 @@ const ProductCard = ({ name, price, image }) => {
 
             <Flex className="product-card-info">
                 <Text className="product-card-name">{name}</Text>
-                <Text className="product-card-price">{price}</Text>
+                <Text className="product-card-price">₹{price}</Text>
             </Flex>
         </div>
     );

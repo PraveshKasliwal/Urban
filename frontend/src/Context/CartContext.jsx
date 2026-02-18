@@ -23,7 +23,6 @@ export const CartProvider = ({ children }) => {
                 }
             );
             setCartItems(res.data);
-            console.log(`cart: ${JSON.stringify(res.data)}`);
         } catch (err) {
             console.error("FETCH CART ERROR ", err);
         }

@@ -47,11 +47,6 @@ const AdminNavbar = () => {
             </button>
           ))}
         </div>
-
-        <div className="admin-footer">
-          <button className="admin-link">Change account</button>
-          <button className="admin-link">Logout</button>
-        </div>
       </nav>
 
       <div className="admin-content">

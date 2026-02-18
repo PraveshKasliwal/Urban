@@ -1,0 +1,158 @@
+.profile-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    color: #2d2d2d;
+}
+
+/* Header */
+.profile-header h2 {
+    font-size: 40px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.profile-header p {
+    font-size: 18px;
+    color: rgba(45, 45, 45, 0.5);
+}
+
+/* Form */
+.profile-form {
+    margin-top: 48px;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+}
+
+.profile-form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-form-group.full-width {
+    grid-column: span 2;
+}
+
+.profile-form-group label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(45, 45, 45, 0.4);
+    margin-bottom: 6px;
+}
+
+.profile-form-group input {
+    background: #f2eee9;
+    border: none;
+    border-radius: 14px;
+    padding: 16px 18px;
+    font-size: 15px;
+    outline: none;
+}
+
+.profile-form-group input:focus {
+    box-shadow: 0 0 0 2px rgba(196, 101, 33, 0.3);
+}
+
+/* Email */
+.email-wrapper {
+    position: relative;
+}
+
+.verified {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #c46521;
+    font-weight: 700;
+}
+
+/* Security */
+.security-section {
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid #f2eee9;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.security-section h3 {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.security-section p {
+    font-size: 14px;
+    color: rgba(45, 45, 45, 0.5);
+}
+
+.change-password-btn {
+    background: #c46521;
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 14px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+}
+
+.change-password-btn:hover {
+    background: #b0571e;
+}
+
+/* Actions */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+    margin-top: 32px;
+}
+
+.discard-btn {
+    background: transparent;
+    border: none;
+    color: rgba(45, 45, 45, 0.5);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.save-btn {
+    background: #2d2d2d;
+    color: white;
+    padding: 14px 36px;
+    border-radius: 14px;
+    border: none;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.save-btn:hover {
+    background: #1f1f1f;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-form-group.full-width {
+        grid-column: span 1;
+    }
+
+    .security-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

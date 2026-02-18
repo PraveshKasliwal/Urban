@@ -1,148 +1,44 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Flex, Button, Text } from '@mantine/core';
+import { Flex, Button, Text, Loader } from '@mantine/core';
+import axios from 'axios';
 
-import Navbar from '../../Components/Navbar/Navbar';
-import CardsCarousel from '../../Components/Carousel/CardsCarousel';
 import ProductCarousel from '../../Components/Carousel/ProductCarousel';
 
 import './MainPage.css';
 
-const collections = [
-  {
-    title: "Outerwear",
-    image: "/images/MainPage-img.jpg",
-  },
-  {
-    title: "Outerwear",
-    image: "/images/MainPage-img.jpg",
-  },
-  {
-    title: "Outerwear",
-    image: "/images/MainPage-img.jpg",
-  },
-  {
-    title: "Outerwear",
-    image: "/images/MainPage-img.jpg",
-  },
-  {
-    title: "Outerwear",
-    image: "/images/MainPage-img.jpg",
-  },
-  {
-    title: "Outerwear",
-    image: "/images/MainPage-img.jpg",
-  },
-  {
-    title: "Outerwear",
-    image: "/images/MainPage-img.jpg",
-  },
-  {
-    title: "Outerwear",
-    image: "/images/MainPage-img.jpg",
-  },
-  {
-    title: "Outerwear",
-    image: "/images/MainPage-img.jpg",
-  },
-  {
-    title: "Outerwear",
-    image: "/images/MainPage-img.jpg",
-  },
-  {
-    title: "Outerwear",
-    image: "/images/MainPage-img.jpg",
-  },
-  {
-    title: "Outerwear",
-    image: "/images/MainPage-img.jpg",
-  },
-  {
-    title: "Outerwear",
-    image: "/images/MainPage-img.jpg",
-  },
-  {
-    title: "Outerwear",
-    image: "/images/MainPage-img.jpg",
-  },
-  {
-    title: "Outerwear",
-    image: "/images/MainPage-img.jpg",
-  },
-  {
-    title: "Outerwear",
-    image: "/images/MainPage-img.jpg",
-  },
-  {
-    title: "Outerwear",
-    image: "/images/MainPage-img.jpg",
-  },
-  {
-    title: "Outerwear",
-    image: "/images/MainPage-img.jpg",
-  },
-  {
-    title: "Outerwear",
-    image: "/images/MainPage-img.jpg",
-  },
-];
-
-
-const productData = [
-  {
-    name: "SweatShirt",
-    price: "$120",
-    image: "/images/product1.png",
-  },
-  {
-    name: "Pants",
-    price: "$120",
-    image: "/images/product2.png",
-  },
-  {
-    name: "Shirt",
-    price: "$120",
-    image: "/images/product3.png",
-  },
-  {
-    name: "SweatShirt",
-    price: "$120",
-    image: "/images/product1.png",
-  },
-  {
-    name: "Pants",
-    price: "$120",
-    image: "/images/product2.png",
-  },
-  {
-    name: "Shirt",
-    price: "$120",
-    image: "/images/product3.png",
-  },
-  {
-    name: "SweatShirt",
-    price: "$120",
-    image: "/images/product1.png",
-  },
-  {
-    name: "Pants",
-    price: "$120",
-    image: "/images/product2.png",
-  },
-  {
-    name: "Shirt",
-    price: "$120",
-    image: "/images/product3.png",
-  },
-  {
-    name: "SweatShirt",
-    price: "$120",
-    image: "/images/product1.png",
-  },
-];
-
 const MainPage = () => {
   const navigate = useNavigate();
+  const [latestProducts, setLatestProducts] = useState([]);
+  const [trendingProducts, setTrendingProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // Fetch both concurrently for better performance
+        const [latestRes, trendingRes] = await Promise.all([
+          axios.get(`${import.meta.env.VITE_APP_BACKEND_LINK}/api/product/latest`),
+          axios.get(`${import.meta.env.VITE_APP_BACKEND_LINK}/api/product/trending`)
+        ]);
+
+        setLatestProducts(Array.isArray(latestRes.data) ? latestRes.data : []);
+        setTrendingProducts(Array.isArray(trendingRes.data) ? trendingRes.data : []);
+      } catch (error) {
+        console.error("Error loading data:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
+
+  const formatData = (data) => (data || []).map(prod => ({
+    name: prod.name,
+    price: `${prod.price}`,
+    image: prod.images?.[0] || "/images/placeholder.jpg"
+  }));
+
   return (
     <Flex className="main-page">
       <Flex className="hero-section">
@@ -165,14 +61,19 @@ const MainPage = () => {
       </Flex>
 
       <Flex className="collections-section">
+
         <Flex className="section-block">
-          <Text className="section-title">Our Collection</Text>
-          <CardsCarousel data={collections} />
+          <Text className="section-title">Latest Additions</Text>
+          {loading ? (
+            <Flex justify="center"><Loader size="lg" /></Flex>
+          ) : (
+            <ProductCarousel data={formatData(latestProducts)} />
+          )}
         </Flex>
 
         <Flex className="section-block">
           <Text className="section-title">Trending</Text>
-          <ProductCarousel data={productData} />
+          <ProductCarousel data={formatData(trendingProducts)} />
         </Flex>
       </Flex>
     </Flex>

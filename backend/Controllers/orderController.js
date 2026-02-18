@@ -83,20 +83,34 @@ exports.createOrder = async (req, res) => {
   }
 };
 
-exports.getOrderById = async (req, res) => {
-    try {
-        const { orderId } = req.params;
+// exports.getOrderById = async (req, res) => {
+//     try {
+//         const { orderId } = req.params;
 
-        const order = await Order.findById(orderId)
-            .populate("items.productId", "name images");
+//         const order = await Order.findById(orderId)
+//             .populate("items.productId", "name images");
 
-        if (!order) {
-            return res.status(404).json({ message: "Order not found" });
-        }
+//         if (!order) {
+//             return res.status(404).json({ message: "Order not found" });
+//         }
 
-        res.status(200).json(order);
-    } catch (err) {
-        console.error("GET ORDER ERROR ", err);
-        res.status(500).json({ message: "Failed to fetch order" });
-    }
+//         res.status(200).json(order);
+//     } catch (err) {
+//         console.error("GET ORDER ERROR ", err);
+//         res.status(500).json({ message: "Failed to fetch order" });
+//     }
+// };
+
+exports.getUserOrders = async (req, res) => {
+  try {
+    const userId = req.user.id;
+
+    const orders = await Order.find({ userId })
+      .sort({ createdAt: -1 });
+
+    res.status(200).json(orders);
+  } catch (err) {
+    console.error("FETCH ORDER HISTORY ERROR ❌", err);
+    res.status(500).json({ message: "Failed to fetch orders" });
+  }
 };

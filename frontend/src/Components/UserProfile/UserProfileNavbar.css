@@ -1,0 +1,71 @@
+/* Layout */
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* Sidebar */
+.admin-navbar {
+  width: 300px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #e0e0e0;
+  background-color: #f5f5ed;
+}
+
+.admin-navbarMain {
+  flex: 1;
+}
+
+/* Header */
+.admin-header {
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.admin-header-name{
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+/* Links / Tabs */
+.admin-link {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 10px 12px;
+  margin-bottom: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #555555;
+}
+
+.admin-link:hover {
+  background-color: #d98d57;
+}
+
+/* Active Tab */
+.admin-active {
+  background-color: #d98d57;
+  color: black;
+  font-weight: 600;
+}
+
+/* Footer */
+.admin-footer {
+  padding-top: 16px;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* Right Content Area */
+.admin-content {
+  flex: 1;
+  padding: 24px;
+  background-color: #f9fafb;
+}

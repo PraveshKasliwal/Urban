@@ -37,7 +37,6 @@ const Checkout = () => {
     const handleSubmit = async (e) => {
         try {
             e.preventDefault();
-            console.log(`subtotal: ${subtotal}`);
             if (!subtotal || subtotal <= 0) {
                 alert("Invalid payment amount");
                 return;
@@ -63,7 +62,6 @@ const Checkout = () => {
                 order_id: order.id,
                 handler: async function (response) {
                     try {
-                        console.log(`handle: ${response}`);
                         await axios.post(
                             `${import.meta.env.VITE_APP_BACKEND_LINK}/api/payment/verify`,
                             response,
@@ -109,7 +107,6 @@ const Checkout = () => {
                     color: "#c36522",
                 },
             };
-            console.log("Razorpay Options:", options);
             const rzp = new window.Razorpay(options);
             rzp.open();
         } catch (err) {
@@ -137,6 +134,7 @@ const Checkout = () => {
                         <TextInput
                             label="Phone Number"
                             value={form.phone}
+                            maxLength={10}
                             onChange={(e) => handleChange("phone", e.target.value)}
                             required
                         />

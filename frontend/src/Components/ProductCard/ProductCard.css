@@ -65,14 +65,14 @@
 /* Text styles */
 .product-card-name {
     font-family: 'Manrope', sans-serif;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 500;
     color: #141514;
 }
 
 .product-card-price {
     font-family: 'Manrope', sans-serif;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 400;
     color: rgba(20, 21, 20, 0.6);
 }

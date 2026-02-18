@@ -10,6 +10,7 @@ const cartRoutes = require("./Routers/cartRoutes");
 const paymentRoutes = require("./Routers/paymentRoutes");
 const orderRoutes = require("./Routers/orderRoutes");
 const styleStudioController = require("./Routers/styleStudioRoutes");
+const userRoutes = require("./Routers/userRoutes");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -24,6 +25,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/api/auth", authRoutes);
+app.use("/api/user", userRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/product", productRoutes);
 app.use("/api/cart", cartRoutes);

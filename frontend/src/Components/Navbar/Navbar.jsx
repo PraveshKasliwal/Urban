@@ -18,6 +18,18 @@ const Navbar = () => {
 
     const isMenActive = location.pathname === "/product/men";
     const isWomenActive = location.pathname === "/product/women";
+
+    const handleStyleStudio = () => {
+        const token = localStorage.getItem("token");
+        console.log(token)
+        if (token) {
+            navigate('/style-studio');
+        }
+        else {
+            alert("please login to use this feature");
+            navigate("/login");
+        }
+    }
     return (
         <Flex className="navbar">
             <Text className="navbar-logo" onClick={() => navigate("/")}>
@@ -40,7 +52,7 @@ const Navbar = () => {
             </Flex>
 
             <Flex className="navbar-actions">
-                <HiMiniSparkles className="nav-icon" size={20} onClick={() => navigate('/style-studio')} />
+                <HiMiniSparkles className="nav-icon" size={20} onClick={() => handleStyleStudio()} />
                 <Input
                     className="search-input"
                     placeholder="Search collections..."

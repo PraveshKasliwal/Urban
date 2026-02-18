@@ -1,14 +1,40 @@
 const Product = require("../Models/product");
 
 exports.getAllProducts = async (req, res) => {
-    try {
-        const products = await Product.find().sort({ createdAt: -1 });
-        res.status(200).json(products);
-    } catch (error) {
-        console.error("FETCH PRODUCTS ERROR :", error);
-        res.status(500).json({ message: "Failed to fetch products" });
-    }
+  try {
+    const products = await Product.find().sort({ createdAt: -1 });
+    res.status(200).json(products);
+  } catch (error) {
+    console.error("FETCH PRODUCTS ERROR :", error);
+    res.status(500).json({ message: "Failed to fetch products" });
+  }
 };
+
+exports.getLatestProducts = async (req, res) => {
+  try {
+    const products = await Product.find({ isActive: true })
+      .sort({ createdAt: -1 })
+      .limit(7)
+      .select("name price images _id");
+    res.status(200).json(products);
+  } catch (err) {
+    res.status(500).json({ message: "Server Error", error: err });
+  }
+};
+
+exports.getTrendingProducts = async (req, res) => {
+  try {
+    const trendingProducts = await Product.aggregate([
+      { $match: { isActive: true } },
+      { $sample: { size: 10 } },
+      { $project: { name: 1, price: 1, images: 1, _id: 0 } } // Send only what's needed
+    ]);
+
+    res.status(200).json(trendingProducts);
+  } catch (err) {
+    res.status(500).json({ message: "Error fetching trending products", error: err });
+  }
+}
 
 exports.getProductsByCategory = async (req, res) => {
   try {
