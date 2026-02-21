@@ -30,6 +30,16 @@ const Navbar = () => {
             navigate("/login");
         }
     }
+
+    const handleCartOpen = () => {
+        if(localStorage.getItem("token")){
+            openCart()
+        }
+        else{
+            alert("Please login to see your cart");
+            navigate("/login");
+        }
+    }
     return (
         <Flex className="navbar">
             <Text className="navbar-logo" onClick={() => navigate("/")}>
@@ -63,7 +73,7 @@ const Navbar = () => {
                     localStorage.getItem("role") === "admin" &&
                     <RiAdminFill className="nav-icon" size={20} onClick={() => navigate('/admin')} />
                 }
-                <IoBagOutline className="nav-icon" size={20} onClick={openCart} />
+                <IoBagOutline className="nav-icon" size={20} onClick={() => handleCartOpen()} />
                 <FaUser onClick={localStorage.getItem("userId") ? () => navigate('/profile') : () => navigate('/login')} className="nav-icon" size={16} />
             </Flex>
         </Flex>
