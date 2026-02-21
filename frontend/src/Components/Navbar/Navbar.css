@@ -4,7 +4,8 @@
     z-index: 1000;
     background-color: #f5f5ed;
     height: 60px;
-    padding: 0 20px;
+    /* padding: 0 20px; */
+    padding: 0 1%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -14,6 +15,7 @@
 .navbar-logo {
     font-weight: 700;
     font-size: 30px;
+    /* font-size: clamp(1rem, 5vw, 30px); */
     text-transform: uppercase;
     font-family: Manrope, sans-serif;
     cursor: pointer;
@@ -24,7 +26,7 @@
     display: flex;
     gap: 20px;
     align-items: center;
-    padding-right: 20px;
+    /* padding-right: 20px; */
 }
 
 .nav-link {
@@ -53,4 +55,21 @@
 /* Icons */
 .nav-icon {
     cursor: pointer;
+}
+
+@media (max-width: 700px) {
+    .navbar-logo{
+        font-size: 25px;
+    }
+    .nav-link {
+        font-size: 14px;
+    }
+}
+@media (max-width: 600px) {
+    .search-input{
+        width: 100px;
+    }
+    .nav-link {
+        font-size: 14px;
+    }
 }

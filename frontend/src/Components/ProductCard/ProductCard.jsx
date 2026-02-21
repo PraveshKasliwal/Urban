@@ -6,10 +6,13 @@ const ProductCard = ({ name, price, image }) => {
     return (
         <div className="product-card">
             <div className="product-card-img-container">
-                <div
+                {/* <div
                     className="product-card-bg"
                     style={{ backgroundImage: `url(${image})` }}
-                />
+                /> */}
+                <div className="product-card-bg">
+                    <img src={image} alt="" loading="lazy"/>
+                </div>
             </div>
 
             <Flex className="product-card-info">

@@ -118,6 +118,7 @@
     font-size: 60px;
   }
 }
+
 @media (max-width: 800px) {
   .mainPage-img-overlay {
     top: 36%;
@@ -128,7 +129,32 @@
     font-size: 40px;
   }
 
-  .hero-subtitle{
+  .hero-subtitle {
     font-size: 16px;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+    /* align-items: flex-end; */
+  }
+
+  .mainPage-img-overlay {
+    top: 36%;
+    left: 30%;
+  }
+}
+
+@media (max-width: 600px) {
+  .btn-men {
+    width: 140px;
+    font-size: 13px;
+  }
+
+  .btn-women {
+    width: 160px;
+    font-size: 13px;
   }
 }

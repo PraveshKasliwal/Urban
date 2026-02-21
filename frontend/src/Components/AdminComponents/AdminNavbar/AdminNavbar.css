@@ -29,6 +29,7 @@
 .admin-header-name{
     text-transform: uppercase;
     font-weight: 700;
+    cursor: pointer;
 }
 
 /* Links / Tabs */

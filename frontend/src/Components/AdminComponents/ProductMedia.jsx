@@ -95,46 +95,6 @@ const ProductMedia = ({ images, setImages }) => {
                 hidden
                 onChange={(e) => handleMainImage(e.target.files[0])}
             />
-
-            <div className="AddProductImage-thumbnail-grid">
-                {gallery.map((img, index) => (
-                    <div
-                        key={index}
-                        className="AddProductImage-thumbnail AddProductImage-image-wrapper"
-                        style={{
-                            backgroundImage: `url(${img})`,
-                            backgroundPosition: "center",
-                            backgroundSize: "cover"
-                        }}
-                    >
-                        {/* <Image src={img} fit="cover" /> */}
-
-                        <button
-                            className="AddProductImage-remove-btn"
-                            onClick={() => removeGalleryImage(index)}
-                        >
-                            ×
-                        </button>
-                    </div>
-                ))}
-
-                {gallery.length < 4 && (
-                    <div
-                        className="AddProductImage-thumbnail add"
-                        onClick={() => galleryInputRef.current.click()}
-                    >
-                        +
-                    </div>
-                )}
-            </div>
-
-            <input
-                ref={galleryInputRef}
-                type="file"
-                accept="image/*"
-                hidden
-                onChange={(e) => handleGalleryImage(e.target.files[0])}
-            />
         </Paper>
     );
 };

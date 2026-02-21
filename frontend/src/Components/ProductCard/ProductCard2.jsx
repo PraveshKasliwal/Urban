@@ -8,10 +8,13 @@ const ProductCard2 = ({ id, name, price, image, colorsData }) => {
     return (
         <div className="product2-card" onClick={() => navigate(`/product/${id}`)}>
             <div className="product2-card-img-container">
-                <div onClick={() => navigate(`/product/${id}`)}
+                {/* <div onClick={() => navigate(`/product/${id}`)}
                     className="product2-card-bg"
                     style={{ backgroundImage: `url(${image})` }}
-                />
+                /> */}
+                <div className="product2-card-bg">
+                    <img src={image} alt="" />
+                </div>
             </div>
 
             <Flex className="product2-card-info-wrapper">

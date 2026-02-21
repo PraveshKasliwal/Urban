@@ -5,20 +5,12 @@ import './AdminNavbar.css';
 
 import AddProduct from '../AddProduct/AddProduct';
 import ProductList from '../ProductList/ProductList';
-import EditProduct from '../EditProduct/EditProduct';
 import BulkUpload from '../../BulkUpload';
-
-const Databases = () => <h2>Databases Page</h2>;
-const Authentication = () => <h2>Authentication Page</h2>;
-const OtherSettings = () => <h2>Other Settings Page</h2>;
 
 const data = [
   { label: 'Products', component: <ProductList /> },
   { label: 'Add Product', component: <AddProduct /> },
   { label: 'Add product bulk', component: <BulkUpload /> },
-  { label: 'Databases', component: <Databases /> },
-  { label: 'Authentication', component: <Authentication /> },
-  { label: 'Other Settings', component: <OtherSettings /> },
 ];
 
 const AdminNavbar = () => {

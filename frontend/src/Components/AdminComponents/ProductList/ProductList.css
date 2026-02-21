@@ -8,14 +8,12 @@
   padding: 60px;
 }
 
-.stock-low input {
-  border: 1px solid orange;
+.stock-low {
   color: orange;
   font-weight: 600;
 }
 
-.stock-zero input {
-  border: 1px solid red;
+.stock-zero {
   color: red;
   font-weight: 600;
 }
@@ -24,5 +22,10 @@
   width: 50px;
   height: 50px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.admin-product-row:hover{
+  background-color: #f5f5f5;
 }

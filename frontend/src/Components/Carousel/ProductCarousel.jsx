@@ -1,23 +1,22 @@
-import { Carousel } from '@mantine/carousel';
-
-import classes from './ProductCarousel.module.css';
-
-import ProductCard from '../ProductCard/ProductCard';
+import { Carousel } from "@mantine/carousel";
+import ProductCard from "../ProductCard/ProductCard";
+import classes from "./ProductCarousel.module.css";
 
 const ProductCarousel = ({ data }) => {
   return (
     <Carousel
-      slideSize="20%"
-      height={"360"}
-      slideGap="3%"
+      height={360}
+      slideGap="md"
       controlsOffset="xs"
-      controlSize={29}
+      controlSize={28}
       withControls
       withIndicators={false}
+      align="start"
+      slideSize="20%" // desktop default
       classNames={classes}
     >
-      {data.map((item, index) => (
-        <Carousel.Slide key={index}>
+      {data.map((item) => (
+        <Carousel.Slide key={item._id}>
           <ProductCard
             name={item.name}
             price={item.price}
@@ -26,7 +25,7 @@ const ProductCarousel = ({ data }) => {
         </Carousel.Slide>
       ))}
     </Carousel>
-  )
-}
+  );
+};
 
-export default ProductCarousel
+export default ProductCarousel;
