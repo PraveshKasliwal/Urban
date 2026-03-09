@@ -1,0 +1,18 @@
+/* ─── Product Page ───────────────────────────────────────── */
+.product-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  padding: 32px;
+  background: var(--cream);
+  align-content: start;
+}
+
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 16px;
+    gap: 2px;
+  }
+}

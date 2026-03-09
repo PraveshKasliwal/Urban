@@ -1,0 +1,94 @@
+/* ─── Product Card ───────────────────────────────────────── */
+.product-card {
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+
+.product-card-img-container {
+  position: relative;
+  height: 85%;
+  width: 100%;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: var(--cream-dark);
+}
+
+/* Corner accent */
+.product-card-img-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-top: 2px solid var(--orange);
+  border-left: 2px solid var(--orange);
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.product-card-img-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  border-bottom: 2px solid var(--orange);
+  border-right: 2px solid var(--orange);
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.product-card:hover .product-card-img-container::before,
+.product-card:hover .product-card-img-container::after {
+  opacity: 1;
+}
+
+.product-card-bg {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  transition: transform 0.25s ease;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.product-card-bg img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: filter 0.4s ease;
+}
+
+.product-card:hover .product-card-bg {
+  transform: scale(1.05);
+}
+
+.product-card-info {
+  padding-top: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.product-card-name {
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary) !important;
+  letter-spacing: 0.02em;
+}
+
+.product-card-price {
+  font-family: 'Manrope', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-secondary) !important;
+}

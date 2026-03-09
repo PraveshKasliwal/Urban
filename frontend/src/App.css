@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Bitter:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Mantine overrides for futuristic theme */
+.mantine-Drawer-header {
+  background-color: var(--cream) !important;
+  border-bottom: 1px solid var(--border) !important;
+  padding: 16px 24px !important;
+}
+
+.mantine-Drawer-title {
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  color: var(--text-secondary) !important;
+}
+
+.mantine-Drawer-body {
+  background-color: var(--cream) !important;
+  padding: 24px !important;
+}
+
+.mantine-Drawer-close {
+  color: var(--text-muted) !important;
+}
+
+.mantine-Loader-root { color: var(--orange) !important; }

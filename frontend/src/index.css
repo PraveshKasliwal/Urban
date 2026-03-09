@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Manrope', sans-serif;
+}
+
+:root {
+  --cream: #f5f5ed;
+  --cream-dark: #eeede4;
+  --orange: #c36522;
+  --orange-glow: rgba(195, 101, 34, 0.15);
+  --orange-subtle: rgba(195, 101, 34, 0.08);
+  --sage: #4f604e;
+  --sage-light: #8c9b8d;
+  --text-primary: #141514;
+  --text-secondary: rgba(20, 21, 20, 0.55);
+  --text-muted: rgba(20, 21, 20, 0.35);
+  --border: rgba(20, 21, 20, 0.1);
+  --border-sharp: rgba(20, 21, 20, 0.15);
+  --glass: rgba(245, 245, 237, 0.7);
+  --shadow-card: 0 2px 20px rgba(20, 21, 20, 0.06), 0 0 0 1px var(--border);
+  --shadow-lift: 0 8px 40px rgba(20, 21, 20, 0.12);
+  --transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Futuristic scan line texture */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(20, 21, 20, 0.012) 2px,
+    rgba(20, 21, 20, 0.012) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--orange); border-radius: 2px; }
+
+/* Selection */
+::selection { background: var(--orange); color: white; }
+
+.mantine-Table-table {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* GPU acceleration for all hover-animated elements */
+.product2-card-bg,
+.product-card-bg,
+.mainPage-img-container,
+.product-desc-img {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.product2-card-img-container,
+.product-card-img-container {
+  transform: translateZ(0);
+  isolation: isolate;
+}
+
+.mantine-Table-table {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}

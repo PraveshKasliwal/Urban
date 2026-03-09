@@ -1,0 +1,7 @@
+.profile-page {
+  min-height: calc(100vh - 64px);
+  background: var(--cream);
+  padding: 48px 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}

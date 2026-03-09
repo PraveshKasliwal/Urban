@@ -1,0 +1,80 @@
+/* ─── Cart Drawer ────────────────────────────────────────── */
+.cart-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0 4px;
+}
+
+.cart-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.2s ease;
+}
+
+.cart-row:hover { background: var(--orange-subtle); padding: 16px 8px; margin: 0 -8px; }
+
+.cart-img {
+  width: 68px;
+  height: 84px;
+  object-fit: cover;
+  flex-shrink: 0;
+  background: var(--cream-dark);
+}
+
+.cart-details {
+  flex: 1;
+}
+
+.cart-details .mantine-Text-root {
+  font-size: 13px !important;
+}
+
+.cart-qty {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--border-sharp);
+  padding: 4px 8px;
+}
+
+.qty-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  transition: color 0.2s ease;
+}
+
+.qty-btn:hover { color: var(--orange); }
+
+.qty-count {
+  font-size: 13px;
+  font-weight: 500;
+  min-width: 20px;
+  text-align: center;
+  color: var(--text-primary);
+}
+
+.cart-footer {
+  margin-top: auto;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+
+/* Checkout button override */
+.cart-footer .mantine-Button-root {
+  border-radius: 0 !important;
+  background-color: var(--orange) !important;
+  height: 48px !important;
+  letter-spacing: 0.12em !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+}

@@ -1,0 +1,28 @@
+/* ─── Product Accordion ──────────────────────────────────── */
+.mantine-Accordion-item {
+  border-bottom: 1px solid var(--border) !important;
+  border-top: none !important;
+}
+
+.mantine-Accordion-control {
+  padding: 14px 0 !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase !important;
+  color: var(--text-secondary) !important;
+}
+
+.mantine-Accordion-control:hover {
+  background: transparent !important;
+  color: var(--orange) !important;
+}
+
+.mantine-Accordion-panel {
+  font-size: 13px !important;
+  color: var(--text-secondary) !important;
+  line-height: 1.7 !important;
+  padding: 0 0 14px !important;
+}
+
+.mantine-Accordion-chevron { color: var(--text-muted) !important; }

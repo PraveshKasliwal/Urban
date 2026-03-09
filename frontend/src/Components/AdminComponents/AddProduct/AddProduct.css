@@ -1,0 +1,186 @@
+.addProduct-page {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.addProduct-page > .mantine-Title-root {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  color: var(--text-muted) !important;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.addProduct-card {
+  background: transparent !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 0 !important;
+  padding: 24px !important;
+  box-shadow: none !important;
+}
+
+.addProduct-section {
+  margin-bottom: 28px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+}
+
+.addProduct-section:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.addProduct-section-title {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+/* Size grid */
+.size-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.size-card {
+  border: 1px solid var(--border);
+  padding: 10px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.size-card:hover {
+  border-color: var(--orange);
+}
+
+.size-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.size-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.stock-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stock-field label {
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+}
+
+.stock-field input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  padding: 4px 0;
+  font-size: 13px;
+  font-family: Manrope, sans-serif;
+  color: var(--text-primary);
+  outline: none;
+  text-align: center;
+  transition: border-color 0.2s ease;
+}
+
+.stock-field input:focus {
+  border-bottom-color: var(--orange);
+}
+
+/* Color swatches */
+.addProduct-color-wrapper {
+  position: relative;
+  display: inline-flex;
+}
+
+.addProduct-color-swatch {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+}
+
+.addProduct-remove-color {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--text-primary);
+  color: white;
+  border: none;
+  font-size: 11px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+/* Mantine input overrides inside add product */
+.addProduct-card .mantine-TextInput-input,
+.addProduct-card .mantine-Textarea-input,
+.addProduct-card .mantine-NumberInput-input,
+.addProduct-card .mantine-Select-input,
+.addProduct-card .mantine-ColorInput-input {
+  border-radius: 0 !important;
+  border-color: var(--border-sharp) !important;
+  background: transparent !important;
+  font-size: 13px !important;
+  transition: border-color 0.2s ease !important;
+}
+
+.addProduct-card .mantine-TextInput-input:focus,
+.addProduct-card .mantine-Textarea-input:focus,
+.addProduct-card .mantine-NumberInput-input:focus,
+.addProduct-card .mantine-Select-input:focus,
+.addProduct-card .mantine-ColorInput-input:focus {
+  border-color: var(--orange) !important;
+}
+
+.addProduct-card .mantine-TextInput-label,
+.addProduct-card .mantine-Textarea-label,
+.addProduct-card .mantine-NumberInput-label,
+.addProduct-card .mantine-Select-label,
+.addProduct-card .mantine-ColorInput-label {
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase !important;
+  color: var(--text-muted) !important;
+  margin-bottom: 6px !important;
+}
+
+/* Submit button */
+.addProduct-page .mantine-Button-root {
+  background-color: var(--orange) !important;
+  border-radius: 0 !important;
+  height: 44px !important;
+  padding: 0 32px !important;
+  letter-spacing: 0.15em !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+}

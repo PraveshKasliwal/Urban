@@ -1,0 +1,85 @@
+/* ─── Filter Panel ───────────────────────────────────────── */
+.filter-panel {
+  width: 220px;
+  min-width: 220px;
+  padding: 32px 24px;
+  border-right: 1px solid var(--border);
+  background: var(--cream);
+  position: sticky;
+  top: 64px;
+  height: calc(100vh - 64px);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.filter-title {
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  color: var(--text-primary) !important;
+  padding-bottom: 16px !important;
+  border-bottom: 1px solid var(--border) !important;
+}
+
+.filter-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.filter-label {
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase !important;
+  color: var(--text-muted) !important;
+}
+
+.price-value {
+  font-size: 12px !important;
+  color: var(--text-secondary) !important;
+  font-variant-numeric: tabular-nums !important;
+}
+
+/* Mantine slider color override */
+.mantine-Slider-bar,
+.mantine-RangeSlider-bar { background-color: var(--orange) !important; }
+.mantine-Slider-thumb,
+.mantine-RangeSlider-thumb { border-color: var(--orange) !important; }
+
+/* Checkboxes */
+.mantine-Checkbox-input:checked { background-color: var(--orange) !important; border-color: var(--orange) !important; }
+.mantine-Checkbox-label { font-size: 12px !important; }
+
+/* Color dots */
+.color-container { flex-wrap: wrap; }
+
+.color-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.color-dot.active,
+.color-dot:hover {
+  border-color: var(--orange);
+  transform: scale(1.15);
+}
+
+/* Apply button */
+.apply-btn {
+  background-color: var(--orange) !important;
+  border-radius: 0 !important;
+  height: 40px !important;
+  letter-spacing: 0.15em !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  margin-top: auto !important;
+}
