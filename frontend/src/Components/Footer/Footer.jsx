@@ -70,7 +70,7 @@ const Footer = () => {
             {/* After footer */}
             <div className="footer-after">
                 <p className="footer-copy">
-                    © 2020 mantine.dev. All rights reserved.
+                    © 2025 Urban. All rights reserved. | Made in India
                 </p>
 
                 <div className="footer-social">
