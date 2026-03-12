@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import Product from "../Models/product.js";
 import { getEmbedding } from "../utils/embedding.js";
 
-const START_INDEX = 3; // 👈 start from product 3
+const START_INDEX = 0; // 👈 start from product 3
 const WAIT_TIME_MS = 60 * 1000; // ⏱ 1 minute
 
 await mongoose.connect(process.env.MONGO_URI);
