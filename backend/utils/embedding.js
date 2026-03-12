@@ -2,19 +2,12 @@ import Replicate from "replicate";
 const replicate = new Replicate();
 
 export const getEmbedding = async (text) => {
-  const output = await replicate.run(
-    "replicate/all-mpnet-base-v2:b6b7585c9640cd7a9572c6e129c9549d79c9c31f0d3fdce7baac7c67ca38f305",
-    {
-      input: { text },
-    }
-  );
+  const output = await replicate.run("beautyyuyanli/multilingual-e5-large:a06276a89f1a902d5fc225a9ca32b6e8e6292b7f3b136518878da97c458e2bad", { input: { text } });
 
-  // 1. Extract the actual vector from the first element of the array
-  const vector = output[0]?.embedding;
+  const vector = output[0];
 
-  // 2. Validate that we actually got an array of numbers
-  if (!Array.isArray(vector) || vector.length !== 768) {
-    throw new Error(`Invalid embedding received. Expected 768 dimensions, got: ${vector?.length}`);
+  if (!Array.isArray(vector) || vector.length !== 1024) {
+    throw new Error(`Invalid embedding received. Expected 1024 dimensions, got: ${vector?.length}`);
   }
 
   return vector;
