@@ -27,20 +27,22 @@ const StyleStudio = () => {
             setProducts([]);
             setGeneratedImage(null);
 
-            // 🔹 1. Search products
+            console.log("generated imges1");
+            // 🔹 2. Generate image (when you enable it)
+            const imgRes = await axios.post(
+                `${import.meta.env.VITE_APP_BACKEND_LINK}/api/style/generate`,
+                { prompt }
+            );
+            console.log("generated imges2");
+            setGeneratedImage(imgRes.data.image);
+
+             // 🔹 1. Search products
             const resp = await axios.post(
                 `${import.meta.env.VITE_APP_BACKEND_LINK}/api/style/search`,
                 { prompt }
             );
 
             setProducts(resp.data);
-
-            // 🔹 2. Generate image (when you enable it)
-            const imgRes = await axios.post(
-                `${import.meta.env.VITE_APP_BACKEND_LINK}/api/style/generate`,
-                { prompt }
-            );
-            setGeneratedImage(imgRes.data.image);
 
         } catch (err) {
             alert("Failed to generate style");

@@ -1,0 +1,389 @@
+/* ─── Root ───────────────────────────────────────────────── */
+.hs-root {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+/* ─── Sticky Scene ───────────────────────────────────────── */
+.hs-scene {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ─── Background ─────────────────────────────────────────── */
+.hs-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(ellipse at 50% 30%, #181210 0%, #0a0806 55%, #060504 100%);
+}
+
+.hs-glow {
+  position: absolute;
+  width: 700px;
+  height: 500px;
+  border-radius: 50%;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  opacity: 0.1;
+  filter: blur(130px);
+  pointer-events: none;
+  will-change: background;
+}
+
+/* ─── Rail Bar ───────────────────────────────────────────── */
+.hs-rail-bar {
+  position: relative;
+  width: 100%;
+  height: 56px;
+  flex-shrink: 0;
+  z-index: 20;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.hs-rail-rod {
+  position: absolute;
+  width: 55%;
+  height: 3px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(180,160,130,0.2) 15%,
+    rgba(220,200,170,0.5) 40%,
+    rgba(220,200,170,0.5) 60%,
+    rgba(180,160,130,0.2) 85%,
+    transparent 100%
+  );
+  bottom: 0;
+  border-radius: 2px;
+}
+
+/* Ceiling mount brackets */
+.hs-rail-rod::before,
+.hs-rail-rod::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 28px;
+  background: rgba(180,160,130,0.3);
+  bottom: 3px;
+}
+.hs-rail-rod::before { left: 18%; }
+.hs-rail-rod::after  { right: 18%; }
+
+/* ─── Hook ───────────────────────────────────────────────── */
+.hs-hook-wrap {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.05s linear, opacity 0.05s linear;
+  will-change: transform;
+}
+
+.hs-hook-curve {
+  width: 14px;
+  height: 10px;
+  border: 2px solid rgba(220,200,160,0.55);
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+}
+
+.hs-hook-stem {
+  width: 2px;
+  height: 22px;
+  background: rgba(220,200,160,0.45);
+}
+
+/* ─── 3D Stage ───────────────────────────────────────────── */
+.hs-stage {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  perspective: 1400px;
+  perspective-origin: 50% -10%;
+  z-index: 10;
+  padding-top: 0;
+}
+
+/* ─── Card Wrapper ───────────────────────────────────────── */
+.hs-card-wrap {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-style: preserve-3d;
+  transition: transform 0.07s linear, opacity 0.07s linear, filter 0.07s linear;
+  will-change: transform, opacity;
+}
+
+/* ─── String from hook to card ───────────────────────────── */
+.hs-string {
+  width: 1px;
+  height: 20px;
+  background: linear-gradient(to bottom, rgba(220,200,160,0.4), rgba(220,200,160,0.1));
+  flex-shrink: 0;
+}
+
+/* ─── Cloth Card ─────────────────────────────────────────── */
+.hs-card {
+  position: relative;
+  width: 280px;
+  height: 380px;
+  border: 1px solid;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.hs-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.hs-card-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(5,4,3,0.05) 0%,
+    transparent 30%,
+    transparent 50%,
+    rgba(5,4,3,0.92) 100%
+  );
+}
+
+.hs-card-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 22px;
+}
+
+.hs-card-tag {
+  font-family: 'Manrope', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 7px;
+}
+
+.hs-card-label {
+  font-family: 'Manrope', sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: #f5f5ed;
+  margin: 0 0 5px 0;
+  line-height: 1;
+}
+
+.hs-card-sub {
+  font-family: 'Manrope', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: rgba(245,245,237,0.45);
+  margin: 0;
+}
+
+/* Active glow border */
+.hs-card-active-border {
+  position: absolute;
+  inset: 0;
+  border: 1.5px solid;
+  pointer-events: none;
+}
+
+/* ─── Bottom Bar ─────────────────────────────────────────── */
+.hs-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 0 48px 40px 48px;
+}
+
+.hs-bottom-left {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.hs-counter {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  transition: color 0.4s ease;
+}
+
+.hs-counter-current {
+  font-size: 28px;
+  letter-spacing: -0.03em;
+}
+
+.hs-counter-sep {
+  font-size: 14px;
+  opacity: 0.4;
+}
+
+.hs-counter-total {
+  font-size: 14px;
+  opacity: 0.4;
+}
+
+.hs-progress-bar {
+  display: flex;
+  gap: 4px;
+}
+
+.hs-progress-seg {
+  height: 2px;
+  width: 32px;
+  transition: background 0.4s ease, opacity 0.4s ease;
+}
+
+.hs-shop-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: 1px solid;
+  padding: 14px 28px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.hs-shop-btn:hover {
+  background: rgba(255,255,255,0.05);
+  gap: 18px;
+}
+
+.hs-shop-btn svg {
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.hs-shop-btn:hover svg {
+  transform: translateX(4px);
+}
+
+/* ─── Side Dots ──────────────────────────────────────────── */
+.hs-dots {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hs-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  transition: background 0.4s ease, transform 0.3s ease;
+}
+
+/* ─── Final CTA ──────────────────────────────────────────── */
+.hs-final {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  background: rgba(6,5,4,0.75);
+  animation: hs-fade-in 0.5s ease both;
+}
+
+.hs-final-eye {
+  font-family: 'Manrope', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5em;
+  color: rgba(255,255,255,0.35);
+  margin: 0;
+}
+
+.hs-final-btn {
+  background: #c36522;
+  border: none;
+  padding: 18px 60px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: #0a0806;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.hs-final-btn:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+
+/* ─── Animations ─────────────────────────────────────────── */
+@keyframes hs-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ─── Mobile ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .hs-card {
+    width: 210px;
+    height: 290px;
+  }
+
+  .hs-bottom {
+    padding: 0 24px 32px 24px;
+  }
+
+  .hs-dots {
+    right: 16px;
+  }
+
+  .hs-card-label {
+    font-size: 18px;
+  }
+}

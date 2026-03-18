@@ -16,6 +16,7 @@ import ProtectedRoute from "./util/ProtectedRoute";
 import Checkout from "./Pages/Checkout/Checkout";
 import OrderSuccess from "./Pages/OrderSuccess/OrderSuccess";
 import StyleStudio from "./Pages/StyleStudio/StyleStudio";
+import ScrollLanding from "./Components/NarativeLanding/ScrollLanding";
 
 const App = () => {
   useEffect(() => {
@@ -46,6 +47,7 @@ const App = () => {
         {/* Main layout routes (WITH navbar & footer) */}
         <Route element={<MainLayout />}>
           <Route path="/" element={<MainPage />} />
+          {/* <Route path="/" element={<ScrollLanding />} /> */}
           <Route path="/product/men" element={<Men />} />
           <Route path="/product/women" element={<Women />} />
           <Route path="/product/:id" element={<ProductDescription />} />
