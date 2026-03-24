@@ -36,14 +36,7 @@ exports.createProduct = async (req, res) => {
 
     const imageUrls = req.files.map((file) => file.location);
 
-    const searchText = `
-          ${req.body.name}.
-          Category: ${req.body.category}.
-          Colors: ${colors?.join(", ")}.
-          Material: ${req.body.material}.
-          Sizes: ${sizes?.map(s => s.size).join(", ")}.
-          Description: ${req.body.description}.
-          `;
+    const searchText = `${req.body.name} ${req.body.category} clothing ${req.body.description}`;
 
     const embedding = await getEmbedding(searchText);
 
@@ -98,14 +91,7 @@ exports.bulkAddProducts = async (req, res) => {
 
       const s3Url = await s3Uploader(tempPath);
 
-      const searchText = `
-        ${item.name}.
-        Category: ${item.category}.
-        Colors: ${item.colors.join(", ")}.
-        Material: ${item.material}.
-        Sizes: ${item.sizes.map(s => s.size).join(", ")}.
-        Description: ${item.description}.
-      `;
+      const searchText = `${item.name} ${item.category} clothing ${item.description}`;
 
       const embedding = await getEmbedding(searchText);
 

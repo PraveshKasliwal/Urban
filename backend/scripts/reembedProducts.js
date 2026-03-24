@@ -20,20 +20,13 @@ for (let i = START_INDEX; i < products.length; i++) {
   console.log(`🚀 STARTING product ${i + 1}/${products.length}`);
   console.log(`🆔 Product ID: ${p._id}`);
 
-  const searchText = `
-    ${p.name}.
-    Category: ${p.category}.
-    Colors: ${p.colors.join(", ")}.
-    Material: ${p.material}.
-    Sizes: ${p.sizes.map((s) => s.size).join(", ")}.
-    Description: ${p.description || ""}.
-  `;
+  const searchText = `${p.name} ${p.category} clothing ${p.description || ""}`;
 
   const embedding = await getEmbedding(searchText);
 
   await Product.updateOne(
     { _id: p._id },
-    { $set: { embedding } }
+    { $set: { embedding, searchText } }
   );
 
   console.log(`✅ COMPLETED product ${i + 1}/${products.length}`);
