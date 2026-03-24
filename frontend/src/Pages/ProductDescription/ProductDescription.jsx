@@ -37,9 +37,10 @@ const ProductDescription = () => {
   return (
     <Flex className='product-desc-container'>
       <div className="product-desc-img-wrapper">
-        <div
+        <img
           className="product-desc-img"
-          style={{ backgroundImage: `url(${productInfo.images?.[0]})` }}
+          src={productInfo.images?.[0]}
+          alt={productInfo.name}
         />
       </div>
 
